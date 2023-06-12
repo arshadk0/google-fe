@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/google-fe/static/js/main.dc5fd22a.js",
+    "index.html": "/google-fe/index.html",
+    "main.dc5fd22a.js.map": "/google-fe/static/js/main.dc5fd22a.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.dc5fd22a.js"
+  ]
+}
