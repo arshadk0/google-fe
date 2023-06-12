@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { googleLogout, useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
+import copy from "copy-to-clipboard";
 
 function App() {
     const [ user, setUser ] = useState([]);
@@ -11,6 +12,10 @@ function App() {
         onSuccess: (codeResponse) => setUser(codeResponse),
         onError: (error) => console.log('Login Failed:', error)
     });
+
+    const copyToClipboard = () => {
+        copy(user.access_token);
+    }
 
     useEffect(
         () => {
@@ -51,6 +56,9 @@ function App() {
                     <p>Name: {profile.name}</p>
                     <p>Email Address: {profile.email}</p>
                     <p>Token: {user.access_token}</p>
+                    <button onClick={copyToClipboard}>
+                        Copy to Clipboard
+                    </button>
                     <br />
                     <br />
                     <button onClick={logOut}>Log out</button>
